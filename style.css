@@ -11,7 +11,7 @@ body {
     background: linear-gradient(120deg, #c084fc, #a78bfa, #818cf8);
     background-size: 400% 400%;
     animation: gradientMove 10s ease infinite;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +33,8 @@ body {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 600px;
+    overflow: visible;  /* Ensures all text is visible */
+    word-wrap: break-word; /* Prevents text overflow */
     transition: 0.5s ease-in-out;
     color: white;
 }
@@ -53,7 +55,9 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     opacity: 0;
     max-height: 0;
-    overflow: hidden;
+    height: auto !important; /* Ensure full height */
+    max-height: none; /* Removes height limit */
+    overflow: visible; /* Ensures full visibility */
     transition: opacity 1s ease-in-out, max-height 2s ease-in-out;
     text-align: center;
 }
@@ -105,27 +109,27 @@ button:hover {
     max-height: 400px;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 600px) {
     .letter-box {
-        width: 120%; /* Ensures it doesn’t exceed the screen */
-        max-width: 550px; /* Prevents it from becoming too large */
+        max-width: 98%;
         padding: 25px;
-        text-align: center;
-    }
-
-    .title {
-        font-size: 22px;
+        min-height: auto; /* Allows text to flow */
     }
 
     .hidden-message {
-        font-size: 16px;
-        line-height: 1.4;
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 8px;
     }
 
     button {
-        font-size: 14px;
-        padding: 10px 20px;
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 250px;
+        display: block;
+        margin: 15px auto;
     }
 }
+
 
