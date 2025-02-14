@@ -109,7 +109,7 @@ button:hover {
 @media (max-width: 600px) {
     .letter-box {
         width: 120%; /* Ensures it doesn’t exceed the screen */
-        max-width: 350px; /* Prevents it from becoming too large */
+        max-width: 550px; /* Prevents it from becoming too large */
         padding: 25px;
         text-align: center;
     }
